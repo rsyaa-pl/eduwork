@@ -1,92 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    :root {
+      --primary: #1e90ff;
+      --light: #f4f4f4;
+      --dark: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1em 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+
+    .hero img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 0;
+    }
+
+
+    .hero button {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: var(--primary);
+    }
+
+    .biodata-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      text-align: center;
+    }
+
+    .biodata-item {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .portfolio-item {
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: var(--dark);
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero img {
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <table border="1" width="100%" id="section1">
-    <tr>
-      <td align="center"><a href="#">Header</a></td>
-      <td align="center"><a href="#">Profil</a></td>
-      <td align="center"><a href="#">Portofolio</a></td>
-    </tr>
-  </table>
 
-  <br>
+  <header>
+    <div style="font-size: 1.2em; padding-left: 1em;">Brand</div>
+    <nav>
+      <a href="#">Header</a>
+      <a href="#">Biodata</a>
+      <a href="#">Portofolio</a>
+    </nav>
+  </header>
 
-  <!-- Section 2: Judul di kiri dan gambar di kanan -->
-  <table border="1" width="100%" id="section2">
-    <tr>
-      <td width="70%">
-        <h2>Selamat datang diwebsite Saya</h2>
-        <p>Ini adalah contoh header dengan dua kolom, kolom kiri berisi tulisan dan kolom kanan berisi gambar</p>
-        <button>Pelajari lebih lanjut</button>
-      </td>
-      <td width="50%" align="center" valign="middle">
-        <img src="https://via.placeholder.com/200" alt="Gambar Placeholder">
-      </td>
-    </tr>
-  </table>
+  <div class="container">
 
-  <br>
+    <section class="hero">
+      <div>
+        <h2>Selamat Datang di Website Saya</h2>
+        <p>Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks seperti ini.</p>
+        <button>Pelajari Lebih Lanjut</button>
+      </div>
+      <div style="display: flex; justify-content: flex-end; width: 100%;">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto Profil">
+      </div>
+    </section>
 
-  <!-- Section 3: Biodata dengan 6 box -->
-  <table border="1" width="100%" id="section3">
-    <tr>
-      <td colspan="3" align="center">
-        <h2>About Me</h2>
-        <p>A brief introduction about myself</p>
-      </td>
-    </tr>
-    <tr>
-      <td align="center">FullName</td>
-      <td align="center">Education</td>
-      <td align="center">Pekerjaan</td>
-    </tr>
-    
-    <tr>
-      <td align="center">Contact</td>
-      <td align="center">Hobi</td>
-      <td align="center">Alamat</td>
-    </tr>
-    
-  </table>
 
-  <br>
+    <h2 class="section-title">About Me</h2>
+    <div class="biodata-grid">
+      <div class="biodata-item"><strong>Full Name:</strong> Dodi</div>
+      <div class="biodata-item"><strong>Education:</strong> S1 Informatika</div>
+      <div class="biodata-item"><strong>Pekerjaan:</strong> Programmer</div>
+      <div class="biodata-item"><strong>Contact:</strong> dodi@example.com</div>
+      <div class="biodata-item"><strong>Hobi:</strong> Membaca, Coding</div>
+      <div class="biodata-item"><strong>Alamat:</strong> Jakarta</div>
+    </div>
 
-  <!-- Section 4: Portofolio -->
-  <table border="1" width="100%" id="section4">
-    <tr>
-      <td colspan="3" align="center">
-        <h2>Portofolio</h2>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" valign="top">
-        <img src="https://via.placeholder.com/200" alt="Gambar Placeholder">
+    <h2 class="section-title">Portofolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://picsum.photos/300/200?random=1" alt="Contoh Website">
         <h3>Proyek 1</h3>
-        <p>Deskripsi Proyek 1.</p>
-      </td>
-      <td align="center" valign="top">
-        <img src="https://via.placeholder.com/200" alt="Gambar Placeholder">
+        <p>Deskripsi proyek 1.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://picsum.photos/300/200?random=1" alt="Contoh Website">
         <h3>Proyek 2</h3>
-        <p>Deskripsi Proyek 2.</p>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" valign="top">
-        <img src="https://via.placeholder.com/200" alt="Gambar Placeholder">
+        <p>Deskripsi proyek 2.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://picsum.photos/300/200?random=1" alt="Contoh Website">
         <h3>Proyek 3</h3>
-        <p>Deskripsi Proyek 3.</p>
-      </td>
-      <td align="center" valign="top">
-        <img src="https://via.placeholder.com/200" alt="Gambar Placeholder">
+        <p>Deskripsi proyek 3.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://picsum.photos/300/200?random=1" alt="Contoh Website">
         <h3>Proyek 4</h3>
-        <p>Deskripsi Proyek 4.</p>
-      </td>
-    </tr>
-  </table>
+        <p>Deskripsi proyek 4.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2024 Dodi. All rights reserved.
+  </footer>
+
 </body>
+
 </html>
